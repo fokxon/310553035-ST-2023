@@ -18,13 +18,13 @@ class ApplicationTest(unittest.TestCase):
         self.assertRaises(ZeroDivisionError, Calculator.divide, 1, 0)
 
     def test_sqrt(self):
-        args=[1,0,16,3.3,17]
+        args = [1, 0, 16, 3.3, 17]
         for arg in args:
             self.assertEqual(Calculator.sqrt(arg), math.sqrt(arg))
         self.assertRaises(ValueError, Calculator.sqrt, -4)
 
     def test_exp(self):
-        args=[1,0,16,3.3,-17]
+        args = [1, 0, 16, 3.3, -17]
         for arg in args:
             self.assertEqual(Calculator.exp(arg), math.exp(arg))
         self.assertRaises(TypeError, Calculator.exp, 'a')
