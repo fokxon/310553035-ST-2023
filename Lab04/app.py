@@ -13,15 +13,16 @@ options = Options()
 options.add_argument('--headless')
 options.add_argument('--window-size=1920,1080')
 options.add_argument('--disable-gpu')
-driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
-#driver  = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()))
+#driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
+driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()))
 
 driver.get("https://www.nycu.edu.tw/")
 driver.maximize_window()
 WebDriverWait(driver, 60).until(EC.element_to_be_clickable((By.LINK_TEXT, '新聞'))).click()
-el = WebDriverWait(driver, 60).until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'su-post')))[0]
+el = WebDriverWait(driver, 60).until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'li[class="su-post"] a')))[0]
 print("print text")
-print(el.text)
+print("el.txt", el.text)
+print("end")
 el.click()
 print(WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.CLASS_NAME, 'single-post-title'))).text)
 for i in WebDriverWait(driver, 60).until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'entry-content'))):
