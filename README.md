@@ -8,3 +8,5 @@
 ![example workflow](https://github.com/fokxon/310553035-ST-2023/actions/workflows/Lab02-CI.yml/badge.svg)
 
 ![example workflow](https://github.com/fokxon/310553035-ST-2023/actions/workflows/Lab03-CI.yml/badge.svg)
+
+![example workflow](https://github.com/fokxon/310553035-ST-2023/actions/workflows/Lab04-CI.yml/badge.svg)
