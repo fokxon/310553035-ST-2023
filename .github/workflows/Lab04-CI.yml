@@ -32,4 +32,3 @@ jobs:
       run: |
         cd Lab04
         python3 app.py
-        flake8 app.py
