@@ -1,6 +1,8 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.service import Service
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.edge.service import Service as EdgeService
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -11,13 +13,14 @@ options = Options()
 options.add_argument('--headless')
 options.add_argument('--window-size=1920,1080')
 options.add_argument('--disable-gpu')
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
+#driver  = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()))
 
 driver.get("https://www.nycu.edu.tw/")
 driver.maximize_window()
 WebDriverWait(driver, 50).until(EC.element_to_be_clickable((By.LINK_TEXT, '新聞'))).click()
 WebDriverWait(driver, 50).until(EC.element_to_be_clickable((By.CLASS_NAME, 'su-post'))).click()
-print(WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.CLASS_NAME, 'entry-title'))).text)
+print(WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.CLASS_NAME, 'entry-header'))).text)
 for i in WebDriverWait(driver, 50).until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'entry-content'))):
     print(i.text)
 
