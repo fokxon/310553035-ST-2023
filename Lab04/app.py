@@ -19,7 +19,9 @@ driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())
 driver.get("https://www.nycu.edu.tw/")
 driver.maximize_window()
 WebDriverWait(driver, 60).until(EC.element_to_be_clickable((By.LINK_TEXT, '新聞'))).click()
-WebDriverWait(driver, 60).until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'su-post')))[0].click()
+el = WebDriverWait(driver, 60).until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'su-post')))[0]
+print(el.text)
+el.click()
 print(WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.CLASS_NAME, 'single-post-title'))).text)
 for i in WebDriverWait(driver, 60).until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'entry-content'))):
     print(i.text)
