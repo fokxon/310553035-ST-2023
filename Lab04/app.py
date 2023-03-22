@@ -20,7 +20,8 @@ driver.get("https://www.nycu.edu.tw/")
 driver.maximize_window()
 WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.LINK_TEXT, '新聞'))).click()
 WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.CLASS_NAME, 'su-post'))).click()
-print(WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.CLASS_NAME, 'single-post-title'))).text)
+#print(WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.CLASS_NAME, 'single-post-title'))).text)
+print(WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.CSS_SELECTOR,'div[id="content-wrap"] header h1'))).get_attribute('innerHTML'))
 for i in WebDriverWait(driver, 30).until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'entry-content'))):
     print(i.text)
 
