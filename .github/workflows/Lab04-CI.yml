@@ -29,5 +29,5 @@ jobs:
     - name: Test app.py
       run: |
         cd Lab04
-	python3 app.py
-	flake8 app.py
+        python3 app.py
+        flake8 app.py
