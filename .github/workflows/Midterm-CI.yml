@@ -24,6 +24,6 @@ jobs:
         cd Midterm
         python3 course_scheduling_system_test.py  -v 1>log.txt
         cat log.txt
-	coverage run course_scheduling_system_test.py
-	coverage report
-	python3 app.py
+        coverage run course_scheduling_system_test.py
+        coverage report
+        python3 app.py
