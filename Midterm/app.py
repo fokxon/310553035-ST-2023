@@ -21,7 +21,7 @@ driver.maximize_window()
 
 WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/ul/li[7]/div[1]/select/option[9]'))).click()
 
-WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[3]/div[1]/div/div'))).click()
+WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[3]/div[1]/div/div')))
 print(driver.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/section/h1').text)
 print(driver.find_element(By.XPATH, '/html/body/div[3]/div[1]/div/div/section/p[1]').text)
 
