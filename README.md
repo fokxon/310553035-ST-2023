@@ -12,3 +12,5 @@
 ![example workflow](https://github.com/fokxon/310553035-ST-2023/actions/workflows/Lab04-CI.yml/badge.svg)
 
 ![example workflow](https://github.com/fokxon/310553035-ST-2023/actions/workflows/Lab05-CI.yml/badge.svg)
+
+![example workflow](https://github.com/fokxon/310553035-ST-2023/actions/workflows/Midterm-CI.yml/badge.svg)
