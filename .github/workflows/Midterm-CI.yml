@@ -22,11 +22,14 @@ jobs:
         python3 -m pip install selenium
         python3 -m pip install webdriver_manager
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Test with unittest 
+    - name: Q1 - Unit Test
       run: |
         cd Midterm
         python3 course_scheduling_system_test.py  -v 1>log.txt
         cat log.txt
         coverage run course_scheduling_system_test.py
         coverage report
+    - name: Q2 - Selenium
+      run: |
+        cd Midterm
         python3 app.py
